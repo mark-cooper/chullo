@@ -1,0 +1,25 @@
+---
+# usage: docker-compose up [-d]
+
+fedora:
+  container_name: fcrepo4
+  # image: islandora-claw/fcrepo4:4.4.0
+  image: lyrasis/fcrepo:4.4.0
+  ports:
+    - "8080:8080"
+
+triplestore:
+  container_name: blazegraph
+  # image: islandora-claw/blazegraph:1.5.3
+  image: lyrasis/blazegraph:1.5.3
+  ports:
+    - "8081:8080"
+
+# fcrepo_camel_webapp:
+#   container_name: fcrepo_camel_webapp
+#   image: islandora-claw/fcrepo-camel-webapp
+#   ports:
+#     - "8082:8080"
+#   links:
+#     - fedora
+#     - triplestore
